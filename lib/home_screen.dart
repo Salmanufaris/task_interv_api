@@ -1,9 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import "package:http/http.dart" as http;
-import 'package:interview_test/second_screen.dart';
+import 'package:interview_test/detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -24,6 +23,18 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.blueAccent,
+        automaticallyImplyLeading: false,
+        title: Text(
+          "University List",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 30,
+          ),
+        ),
+      ),
       body: universalList.isEmpty
           ? SizedBox()
           : ListView.builder(
@@ -44,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               )));
                     },
                     child: Card(
-                      elevation: 2,
+                      elevation: 4,
                       child: Column(
                         children: [
                           Text(

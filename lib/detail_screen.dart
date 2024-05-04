@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -22,6 +21,15 @@ class _SecondSCreenState extends State<SecondSCreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.blueAccent,
+        title: Text(
+          "Details",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 30,
+          ),
+        ),
         automaticallyImplyLeading: false,
       ),
       body: Column(
@@ -54,7 +62,7 @@ class _SecondSCreenState extends State<SecondSCreen> {
     );
   }
 
-  _launchURL() async {
+  launchURL() async {
     log(123);
     final Uri url =
         Uri.parse("http://universities.hipolabs.com/search?name=middle");
